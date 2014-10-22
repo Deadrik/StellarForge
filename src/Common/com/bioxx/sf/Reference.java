@@ -2,7 +2,7 @@ package com.bioxx.sf;
 
 public class Reference 
 {
-	public static final String ModID = "StellarForge";
+	public static final String ModID = "stellarforge";
 	public static final String ModName = "StellarForge";
 
 	public static final int VersionMajor = 0;
