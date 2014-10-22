@@ -6,7 +6,7 @@ import com.bioxx.sf.Blocks.BlockSF;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 
-public class TFCBlocks 
+public class SFBlocks 
 {
 	public static int clayGrassRenderId;
 

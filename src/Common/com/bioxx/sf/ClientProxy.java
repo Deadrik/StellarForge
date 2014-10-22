@@ -4,6 +4,12 @@ import java.io.File;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.World;
+
+import com.bioxx.sf.Client.KeyBindingHandler;
+import com.bioxx.sf.Client.KeyBindings;
+
+import cpw.mods.fml.common.FMLCommonHandler;
+import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -26,9 +32,9 @@ public class ClientProxy extends CommonProxy
 
 	@Override
 	@SideOnly(Side.CLIENT)
-	public void registerBiomeEventHandler()
+	public void registerHandlers()
 	{
-
+		FMLCommonHandler.instance().bus().register(new KeyBindingHandler());
 	}
 
 	@Override
@@ -70,16 +76,14 @@ public class ClientProxy extends CommonProxy
 	@Override
 	public void registerKeys()
 	{
-
+		KeyBindings.addKeyBinding(KeyBindingHandler.Key_Tablet);
+		KeyBindings.addIsRepeating(false);
 	}
-
 
 	@Override
 	public void registerGuiHandler()
 	{
-		//NetworkRegistry.INSTANCE.registerGuiHandler(TerraFirmaCraft.instance, new com.bioxx.tfc.Handlers.Client.GuiHandler());
-		// Register Gui Event Handler
-		//MinecraftForge.EVENT_BUS.register(new com.bioxx.tfc.Handlers.Client.GuiHandler());
+		NetworkRegistry.INSTANCE.registerGuiHandler(StellarForge.instance, new com.bioxx.sf.Client.Gui.GuiHandler());
 	}
 
 	@Override

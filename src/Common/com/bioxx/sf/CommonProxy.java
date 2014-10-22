@@ -5,6 +5,7 @@ import java.io.File;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.World;
 import cpw.mods.fml.common.FMLCommonHandler;
+import cpw.mods.fml.common.network.NetworkRegistry;
 
 public class CommonProxy
 {
@@ -18,12 +19,7 @@ public class CommonProxy
 		// NOOP on server
 	}
 
-	public void registerBiomeEventHandler()
-	{
-		// NOOP on server
-	}
-
-	public void registerPlayerRenderEventHandler()
+	public void registerHandlers()
 	{
 		// NOOP on server
 	}
@@ -74,6 +70,6 @@ public class CommonProxy
 
 	public void registerGuiHandler()
 	{
-		//NetworkRegistry.INSTANCE.registerGuiHandler(TerraFirmaCraft.instance, new GuiHandler());
+		NetworkRegistry.INSTANCE.registerGuiHandler(StellarForge.instance, new com.bioxx.sf.Gui.GuiHandler());
 	}
 }

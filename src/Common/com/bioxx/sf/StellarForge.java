@@ -5,9 +5,10 @@ package com.bioxx.sf;
 
 import java.io.File;
 
+import net.minecraftforge.common.config.Configuration;
+
 import com.bioxx.sf.Networking.PacketPipeline;
 
-import net.minecraftforge.common.config.Configuration;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -39,6 +40,16 @@ public class StellarForge
 		instance = this;
 		//Load our settings from the file
 		loadSettings();
+
+		proxy.registerKeys();
+		proxy.registerHandlers();
+		proxy.registerGuiHandler();
+
+		/*DimensionManager.registerProviderType(2, WorldProvider.class, true);
+
+		DimensionManager.registerDimension(2, 2);
+		DimensionManager.registerDimension(3, 2);
+		DimensionManager.registerDimension(4, 2);*/
 
 	}
 

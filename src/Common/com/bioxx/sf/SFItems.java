@@ -2,7 +2,7 @@ package com.bioxx.sf;
 
 import net.minecraft.item.Item;
 
-public class TFCItems
+public class SFItems
 {
 	public static Item GemRuby;
 
